@@ -1,5 +1,5 @@
 declare module "prop-types" {
-    const PropTypes: any;
-    export default PropTypes;
+    const PropTypes: unknown;
+    export default Prop-Types-d.ts;
   }
   

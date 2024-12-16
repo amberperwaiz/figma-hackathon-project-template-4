@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import React from 'react';
+import React, { ReactElement }  from 'react';
 
-function ProductsHero() {
+function ProductsHero(): ReactElement {
   const router = useRouter();
 
   return (

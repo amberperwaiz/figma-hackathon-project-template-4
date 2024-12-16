@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -27,22 +27,22 @@ const productImages = [
 
 function ShopGridDefault() {
   // State for sorting and filtering
-  const [sortBy, setSortBy] = useState("bestMatch");
-  const [itemsPerPage, setItemsPerPage] = useState(12);
+  const [sortBy, setSortBy] = useState<string>("bestMatch");
+  const [itemsPerPage, setItemsPerPage] = useState<number>(12);
 
   // Handler for sort change
-  const handleSortChange = (e) => {
+  const handleSortChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setSortBy(e.target.value);
   };
 
   // Handler for items per page
-  const handleItemsPerPageChange = (e) => {
+  const handleItemsPerPageChange = (e: ChangeEvent<HTMLInputElement>) => {
     setItemsPerPage(Number(e.target.value));
   };
 
   // Product Card Component
-  const ProductCard = ({ imageSrc }) => {
-    const [isHovered, setIsHovered] = useState(false);
+  const ProductCard = ({ imageSrc }: { imageSrc: string }) => {
+    const [isHovered, setIsHovered] = useState<boolean>(false);
 
     return (
       <div
@@ -158,4 +158,4 @@ function ShopGridDefault() {
   );
 }
 
-export default ShopGridDefault;
+export default ShopGridDefault
